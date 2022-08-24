@@ -1,0 +1,56 @@
+@import '../utils/container';
+
+.hero {
+    color: $white-color;
+    letter-spacing: 0.06em;
+    text-align: center;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    max-width: 1600px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), 
+    url('../images/hero.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.hero__container {
+    @extend %container;
+}
+.hero__title {
+    width: 690px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.36;
+    text-transform: uppercase;
+}
+.hero__btn {
+    font-weight: 700;
+    color: $white-color;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 10px 32px;
+    min-width: 200px;
+    border: $blue-color;
+    background-color: $blue-color;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+
+    transition: background-color $timing $cubic;
+
+    &:hover, &:focus {
+        background-color: $press-button;
+    }
+    
+}
+
+

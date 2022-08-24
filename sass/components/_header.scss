@@ -1,0 +1,92 @@
+@import '../utils/container';
+@import '../utils/logo';
+@import '../utils/list';
+
+.header {
+    border: $line-header solid $line-color;
+}
+.header-wrapper {
+    @extend %container;
+    display: flex;
+    align-items: center;
+    & .header-contacsts {
+        margin-left: auto;
+    }
+}
+.header__logo {
+    @extend %logo;
+    margin-right: 93px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+.header__logo--part {
+    color: $black-color;
+}
+.header-nav {
+    @extend %list;
+    display: flex;
+    align-items: center;
+    &__item:not(:last-child) {
+        margin-right: 50px;
+    }
+}
+
+.header-nav__link {
+    text-decoration: none;
+    font-weight: 500;
+    color: $black-text-color;
+
+    &:hover, &:focus {
+        color: $blue-color;
+    }
+}
+
+.header-nav .header-nav__link--current {
+    color: $blue-color;
+    position: relative;
+    padding-left: 2px;
+    padding-right: 2px;
+    &::after {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+        background-color: $blue-color;
+        bottom: calc(0px - $line-header);
+        left: 0;
+    }
+}
+.header-contacsts {    
+    @extend %list;
+    display: flex;
+    align-items: center;    
+    gap: 50px;
+}
+.header-contacsts__link {
+    text-decoration: none;
+    font-weight: 500;
+    color: $grey-text-color;
+
+    transition: color $timing $cubic;
+    
+    &:hover, &:focus {
+        color: $blue-color;
+    }
+}   
+.header-nav__link, .header-contacsts__link {
+    display: flex;
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+
+    transition: color $timing $cubic;
+}
+.header-contacts__icon {    
+    margin-right: 10px;
+    fill: currentColor;
+}
